@@ -19,6 +19,7 @@ export class ContactManagerComponent implements OnInit {
      ngOnInit(): void {
    this.getAllContact()
     }
+
     // get all contact
     getAllContact(){
       this.api.allContacts().subscribe((data:any)=>{
@@ -37,6 +38,7 @@ export class ContactManagerComponent implements OnInit {
     deleteContact(contactId:any){
       this.api.deleteContact(contactId).subscribe((data:any)=>{
   this.getAllContact()
+  // instead of calling getAllContact() we can use window.location.reload()-auto refresh
       })
     }
 
